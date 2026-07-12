@@ -2,280 +2,134 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Featured Video</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="description" content="Watch today's featured video.">
+<title>The Internet Be Wild</title>
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    box-sizing:border-box;
 }
 
 body{
-background:#0b0f1a;
-color:#fff;
-display:flex;
-justify-content:center;
-padding:30px 15px;
+    margin:0;
+    padding:20px 10px;
+    background:#0b0f1a;
+    color:white;
+    font-family:Arial, sans-serif;
 }
 
 .container{
-width:100%;
-max-width:760px;
+    max-width:480px;
+    margin:auto;
+    text-align:center;
 }
 
-.card{
-background:#151b29;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 20px 60px rgba(0,0,0,.45);
+h1{
+    font-size:26px;
+    margin-bottom:15px;
 }
 
-.header{
-padding:22px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:1px solid rgba(255,255,255,.08);
+.video-box{
+    position:relative;
+    width:100%;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(0,0,0,.5);
 }
 
-.logo{
-font-size:24px;
-font-weight:700;
-letter-spacing:.5px;
+.video-box img{
+    width:100%;
+    display:block;
 }
 
-.badge{
-background:#2563eb;
-padding:7px 14px;
-border-radius:999px;
-font-size:13px;
-font-weight:600;
-}
-
-.player{
-position:relative;
-background:#000;
-cursor:pointer;
-}
-
-.player img{
-width:100%;
-display:block;
-aspect-ratio:16/9;
-object-fit:cover;
-}
-
-.play{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:90px;
-height:90px;
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(10px);
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:42px;
-transition:.3s;
-}
-
-.player:hover .play{
-transform:translate(-50%,-50%) scale(1.08);
+.play-btn{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:rgba(0,0,0,.65);
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
 }
 
 video{
-display:none;
-width:100%;
-background:#000;
-max-height:75vh;
+    width:100%;
+    max-height:75vh;
+    background:#000;
+    border-radius:15px;
+    display:none;
 }
 
-.content{
-padding:25px;
-}
-
-.title{
-font-size:30px;
-font-weight:700;
-margin-bottom:10px;
-}
-
-.meta{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-color:#9ca3af;
-font-size:14px;
-margin-bottom:20px;
+/* sembunyikan tombol fullscreen */
+video::-webkit-media-controls-fullscreen-button{
+    display:none !important;
 }
 
 .desc{
-line-height:1.7;
-color:#d1d5db;
-margin-bottom:28px;
-}
-
-.button{
-display:block;
-width:100%;
-padding:17px;
-background:#2563eb;
-color:#fff;
-text-decoration:none;
-text-align:center;
-font-size:18px;
-font-weight:700;
-border-radius:12px;
-transition:.3s;
-}
-
-.button:hover{
-background:#1d4ed8;
-}
-
-footer{
-margin-top:20px;
-text-align:center;
-font-size:13px;
-color:#94a3b8;
-}
-
-footer a{
-color:#94a3b8;
-text-decoration:none;
-margin:0 8px;
-}
-
-footer a:hover{
-color:white;
-}
-
-@media(max-width:600px){
-
-.title{
-font-size:24px;
-}
-
-.play{
-width:70px;
-height:70px;
-font-size:34px;
-}
-
-.header{
-padding:18px;
-}
-
+    margin-top:15px;
+    font-size:15px;
+    color:#ccc;
 }
 </style>
 
 </head>
+
 <body>
 
 <div class="container">
 
-<div class="card">
+<h1>The Internet Be Wild</h1>
 
-<div class="header">
-<div class="logo">VIDEO HUB</div>
-<div class="badge">Featured</div>
-</div>
+<div class="video-box" id="thumbnailBox">
 
-<div class="player" id="thumb">
+    <img src="https://cdn.aceimg.com/RQm0wiwZe.jpg">
 
-<img src="thumbnail.jpg" alt="Thumbnail">
-
-<div class="play">▶</div>
+    <div class="play-btn">
+        ▶
+    </div>
 
 </div>
 
-<video id="video" controls playsinline preload="metadata">
 
-<source src="video.mp4" type="video/mp4">
-
+<video id="videoPlayer" controls playsinline preload="metadata">
+    <source src="https://cdn.slicedrive.com/U1aNyu4o1.mp4" type="video/mp4">
 </video>
 
-<div class="content">
-
-<div class="title">
-Featured Video
-</div>
-
-<div class="meta">
-
-<span>👁 12.8K Views</span>
-
-<span>⭐ 4.9 Rating</span>
-
-<span>📅 Updated Today</span>
-
-</div>
 
 <div class="desc">
+Watch the full video below
+</div>
 
-Enjoy today's featured video in high quality.
-Watch the preview above or continue to the full experience below.
 
 </div>
 
-<a class="button"
-href="https://example.com"
-target="_blank"
-rel="noopener">
-
-Watch Full Video
-
-</a>
-
-</div>
-
-</div>
-
-<footer>
-
-© 2026 Video Hub
-
-<br><br>
-
-<a href="#">Privacy</a>
-
-|
-
-<a href="#">Terms</a>
-
-|
-
-<a href="#">Contact</a>
-
-</footer>
-
-</div>
 
 <script>
 
-const thumb=document.getElementById("thumb");
+const thumbBox = document.getElementById("thumbnailBox");
+const video = document.getElementById("videoPlayer");
 
-const video=document.getElementById("video");
 
-thumb.onclick=function(){
+thumbBox.onclick = function(){
 
-thumb.style.display="none";
+    thumbBox.style.display="none";
 
-video.style.display="block";
+    video.style.display="block";
 
-video.play();
+    video.play();
 
 };
 
+
 </script>
+
 
 </body>
 </html>
