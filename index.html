@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,120 +10,320 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
+
 
 body{
-    background:#080b12;
-    color:white;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+
+background:
+radial-gradient(circle at top,#182b75 0%,#080812 45%,#020205 100%);
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Arial,sans-serif;
+
+color:white;
+
 }
+
 
 .container{
-    width:100%;
-    max-width:520px;
-    margin:auto;
-    padding:15px;
+
+width:100%;
+max-width:520px;
+margin:auto;
+padding:15px;
+
 }
 
 
-.title{
-    font-size:26px;
-    font-weight:700;
-    text-align:center;
-    margin:10px 0 18px;
+
+/* HEADER */
+
+.brand{
+
+text-align:center;
+padding:20px 10px;
+
 }
+
+
+.logo{
+
+width:90px;
+height:90px;
+margin:auto;
+
+border-radius:50%;
+
+background:
+linear-gradient(135deg,#00eaff,#8b00ff,#ff6a00);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:22px;
+font-weight:900;
+
+text-align:center;
+
+box-shadow:
+
+0 0 20px #00eaff,
+0 0 40px #8b00ff;
+
+}
+
+
+
+h1{
+
+margin-top:18px;
+
+font-size:32px;
+
+font-weight:900;
+
+letter-spacing:1px;
+
+text-transform:uppercase;
+
+text-shadow:
+
+0 0 10px #00eaff,
+0 0 25px #0066ff;
+
+}
+
+
+
+.tagline{
+
+margin-top:10px;
+
+color:#ddd;
+
+font-size:15px;
+
+}
+
+
+/* VIDEO */
 
 
 .video-box{
-    position:relative;
-    width:100%;
-    border-radius:16px;
-    overflow:hidden;
-    background:#000;
-    box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+position:relative;
+
+border-radius:18px;
+
+overflow:hidden;
+
+background:#000;
+
+box-shadow:
+
+0 0 20px #00eaff,
+0 0 35px rgba(138,0,255,.6);
+
+cursor:pointer;
+
 }
+
 
 
 .video-box img{
-    width:100%;
-    height:auto;
-    display:block;
+
+width:100%;
+display:block;
+
 }
+
 
 
 .play{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:80px;
-    height:80px;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(5px);
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:40px;
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+
+width:85px;
+height:85px;
+
+border-radius:50%;
+
+
+background:
+rgba(0,0,0,.55);
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+font-size:40px;
+
+
+box-shadow:
+
+0 0 25px #00eaff;
+
 }
+
 
 
 video{
-    width:100%;
-    max-height:80vh;
-    background:#000;
-    border-radius:16px;
-    display:none;
+
+display:none;
+
+width:100%;
+
+max-height:80vh;
+
+background:#000;
+
+border-radius:18px;
+
 }
+
 
 
 video::-webkit-media-controls-fullscreen-button{
-    display:none !important;
-}
 
-
-
-.description{
-
-    margin-top:25px;
-    background:#111827;
-    padding:20px;
-    border-radius:15px;
-    line-height:1.7;
-    font-size:15px;
-    color:#ddd;
+display:none!important;
 
 }
 
 
-.description h2{
-    color:white;
-    font-size:20px;
-    margin-bottom:12px;
+
+
+/* CONTENT */
+
+
+.card{
+
+
+margin-top:25px;
+
+padding:20px;
+
+border-radius:18px;
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.03)
+);
+
+
+border:
+
+1px solid rgba(0,234,255,.3);
+
+
+box-shadow:
+
+0 0 20px rgba(0,234,255,.15);
+
+
 }
 
 
-.info{
 
-    margin-top:20px;
-    padding:15px;
-    border-radius:12px;
-    background:#0f172a;
-    color:#aaa;
-    font-size:14px;
-    line-height:1.6;
+.card h2{
+
+font-size:22px;
+
+margin-bottom:12px;
+
+
+color:#00eaff;
+
+text-shadow:
+
+0 0 10px #00eaff;
+
 
 }
+
+
+
+.card p{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:#ddd;
+
+
+}
+
+
+
+.badges{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-top:15px;
+
+}
+
+
+.badge{
+
+padding:8px 12px;
+
+border-radius:20px;
+
+background:
+
+linear-gradient(
+90deg,
+#00eaff,
+#8b00ff
+);
+
+
+font-size:13px;
+
+font-weight:bold;
+
+}
+
 
 
 .footer{
-    text-align:center;
-    color:#777;
-    font-size:13px;
-    margin:25px 0;
+
+text-align:center;
+
+margin:30px 0;
+
+color:#777;
+
+font-size:13px;
+
 }
 
 
@@ -137,12 +338,38 @@ video::-webkit-media-controls-fullscreen-button{
 <div class="container">
 
 
-<div class="title">
-The Internet Be Wild
+
+<div class="brand">
+
+
+<div class="logo">
+
+THE<br>
+WILD
+
 </div>
 
 
+<h1>
+The Internet Be Wild
+</h1>
+
+
+<div class="tagline">
+
+😂 Funny Moments • 🔥 Viral Videos • ⚡ Daily Chaos
+
+</div>
+
+
+</div>
+
+
+
+
+
 <div class="video-box" id="thumb">
+
 
 <img src="https://cdn.aceimg.com/RQm0wiwZe.jpg">
 
@@ -156,7 +383,9 @@ The Internet Be Wild
 
 
 
-<video id="player" controls playsinline>
+
+
+<video id="video" controls playsinline>
 
 <source src="https://cdn.slicedrive.com/U1aNyu4o1.mp4" type="video/mp4">
 
@@ -164,54 +393,101 @@ The Internet Be Wild
 
 
 
-<div class="description">
 
-<h2>Watch The Full Video</h2>
+
+
+<div class="card">
+
+
+<h2>
+Welcome To The Internet Be Wild
+</h2>
+
 
 <p>
-Welcome to The Internet Be Wild. Here you can discover interesting,
-entertaining, and trending videos from around the internet.
+
+Discover the most interesting moments from around the internet.
+From funny clips, trending stories, amazing reactions, and viral
+content that people are talking about every day.
+
 </p>
+
 
 <br>
 
+
 <p>
-Our goal is to share unique moments, viral stories, and amazing
-content in one simple place. Enjoy the video experience with a clean
-and easy-to-use player designed for mobile users.
+
+Our community brings together people who love entertainment,
+humor, and unique online moments. Sit back, relax, and enjoy
+the latest videos updated regularly.
+
 </p>
+
 
 <br>
 
-<p>
-Make sure your connection is stable for the best viewing quality.
-The video player will automatically adjust to your device screen
-for a smoother experience.
-</p>
-
-<br>
 
 <p>
-Thank you for visiting our page. We regularly update our content
-with fresh videos and interesting stories from different topics.
-Stay tuned for more updates.
+
+Whether you are looking for something funny, surprising,
+or simply entertaining, The Internet Be Wild is your place
+to discover fresh content from the digital world.
+
 </p>
+
+
+
+<div class="badges">
+
+<div class="badge">
+🔥 Viral
+</div>
+
+<div class="badge">
+😂 Funny
+</div>
+
+<div class="badge">
+⚡ Trending
+</div>
+
+<div class="badge">
+🌎 Community
+</div>
+
+
+</div>
 
 
 </div>
 
 
 
-<div class="info">
 
-<strong>About this page</strong>
-<br><br>
 
-This page is created to provide a better video browsing experience.
-All content is organized in a simple format so visitors can easily
-watch and enjoy videos using their mobile devices.
+<div class="card">
+
+
+<h2>
+About This Community
+</h2>
+
+
+<p>
+
+The Internet Be Wild is a place where people can enjoy
+interesting videos and share the best moments from the web.
+
+We focus on entertainment, positive vibes, and discovering
+new content every day.
+
+</p>
+
 
 </div>
+
+
 
 
 
@@ -222,23 +498,31 @@ watch and enjoy videos using their mobile devices.
 </div>
 
 
+
 </div>
+
 
 
 
 <script>
 
+
 const thumb=document.getElementById("thumb");
-const video=document.getElementById("player");
+
+const video=document.getElementById("video");
 
 
 thumb.onclick=function(){
 
+
 thumb.style.display="none";
+
 
 video.style.display="block";
 
+
 video.play();
+
 
 };
 
@@ -246,5 +530,7 @@ video.play();
 </script>
 
 
+
 </body>
+
 </html>
