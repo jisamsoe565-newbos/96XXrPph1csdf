@@ -3,143 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Featured Video</title>
 
-<title>SliceDrive</title>
+<meta name="description" content="Watch our featured video.">
+<meta property="og:title" content="Featured Video">
+<meta property="og:description" content="Watch our featured video.">
+<meta property="og:type" content="website">
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    background:#fff;
-    color:#111;
-}
-
-header{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px;
-}
-
-.logo{
-    font-size:22px;
-    font-weight:700;
-}
-
-.upload{
-    background:#0d1225;
-    color:#fff;
-    padding:12px 24px;
-    border-radius:30px;
-    text-decoration:none;
-    font-size:14px;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+background:#0f172a;
+color:#fff;
+display:flex;
+justify-content:center;
+padding:30px 15px;
 }
 
 .container{
-    max-width:900px;
-    margin:20px auto;
-    text-align:center;
+width:100%;
+max-width:760px;
 }
 
-.video-box{
-    width:100%;
-    max-width:600px;
-    margin:auto;
-    border-radius:10px;
-    overflow:hidden;
-    background:#000;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
+.card{
+background:#111827;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,.35);
 }
-
-video{
-    width:100%;
-    display:block;
-    background:#000;
-}
-
-.more{
-    display:inline-block;
-    margin-top:20px;
-    color:#3266ff;
-    text-decoration:none;
-    font-size:17px;
-}
-
-footer{
-    margin-top:120px;
-    text-align:center;
-    font-size:12px;
-    color:#888;
-}
-
-footer a{
-    color:#888;
-    text-decoration:none;
-    margin:0 15px;
-}
-
-@media(max-width:700px){
 
 header{
-padding:18px;
+padding:25px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-font-size:20px;
+font-size:28px;
+font-weight:700;
 }
 
-.video-box{
-width:95%;
+.subtitle{
+margin-top:8px;
+color:#cbd5e1;
+font-size:15px;
 }
 
+.video-wrap{
+background:#000;
+}
+
+video{
+width:100%;
+display:block;
+background:#000;
+max-height:75vh;
+object-fit:contain;
+}
+
+.content{
+padding:28px;
+}
+
+h1{
+font-size:28px;
+margin-bottom:15px;
+}
+
+p{
+line-height:1.7;
+color:#d1d5db;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 34px;
+background:#2563eb;
+color:#fff;
+text-decoration:none;
+border-radius:12px;
+font-weight:700;
+transition:.25s;
+}
+
+.btn:hover{
+background:#1d4ed8;
+transform:translateY(-2px);
+}
+
+footer{
+margin-top:25px;
+text-align:center;
+color:#94a3b8;
+font-size:14px;
+}
+
+footer a{
+color:#94a3b8;
+text-decoration:none;
+margin:0 10px;
+}
+
+footer a:hover{
+color:#fff;
+}
+
+@media(max-width:600px){
+
+h1{
+font-size:22px;
+}
+
+.logo{
+font-size:24px;
+}
+
+.content{
+padding:22px;
+}
+
+.btn{
+width:100%;
+text-align:center;
+}
 }
 </style>
-
 </head>
+
 <body>
-
-<header>
-
-<div class="logo">
-SliceDrive
-</div>
-
-<a href="#" class="upload">
-Upload
-</a>
-
-</header>
 
 <div class="container">
 
-<div class="video-box">
+<div class="card">
 
-<video controls playsinline preload="metadata">
+<header>
+<div class="logo">YOUR BRAND</div>
+<div class="subtitle">Featured Video Collection</div>
+</header>
+
+<div class="video-wrap">
+
+<!-- Ganti video.mp4 dengan video kamu -->
+<video controls preload="metadata" poster="thumbnail.jpg">
 <source src="video.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
 </video>
 
 </div>
 
-<a href="#" class="more">
-Proceed for more
+<div class="content">
+
+<h1>Featured Video</h1>
+
+<p>
+Enjoy today's featured video. We regularly publish entertaining and engaging content for our audience.
+</p>
+
+<!-- Ganti link tujuan -->
+<a class="btn" href="https://example.com" target="_blank" rel="noopener">
+Watch Full Video
 </a>
 
 </div>
 
+</div>
+
 <footer>
-
-<a href="#">Terms of Service</a>
-
-<a href="#">Report Abuse</a>
-
+<p>© 2026 YOUR BRAND</p>
+<div style="margin-top:10px;">
+<a href="#">Privacy</a> |
+<a href="#">Terms</a> |
+<a href="#">Contact</a>
+</div>
 </footer>
+
+</div>
 
 </body>
 </html>
