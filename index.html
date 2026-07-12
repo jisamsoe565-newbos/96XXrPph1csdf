@@ -2,128 +2,243 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>The Internet Be Wild</title>
 
 <style>
+
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
 body{
-    margin:0;
-    padding:20px 10px;
-    background:#0b0f1a;
+    background:#080b12;
     color:white;
-    font-family:Arial, sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 }
 
 .container{
-    max-width:480px;
+    width:100%;
+    max-width:520px;
     margin:auto;
-    text-align:center;
+    padding:15px;
 }
 
-h1{
+
+.title{
     font-size:26px;
-    margin-bottom:15px;
+    font-weight:700;
+    text-align:center;
+    margin:10px 0 18px;
 }
+
 
 .video-box{
     position:relative;
     width:100%;
-    border-radius:15px;
+    border-radius:16px;
     overflow:hidden;
-    cursor:pointer;
-    box-shadow:0 0 20px rgba(0,0,0,.5);
+    background:#000;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
 }
+
 
 .video-box img{
     width:100%;
+    height:auto;
     display:block;
 }
 
-.play-btn{
+
+.play{
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    background:rgba(0,0,0,.65);
-    width:70px;
-    height:70px;
+    width:80px;
+    height:80px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(5px);
     border-radius:50%;
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-size:35px;
+    align-items:center;
+    font-size:40px;
 }
+
 
 video{
     width:100%;
-    max-height:75vh;
+    max-height:80vh;
     background:#000;
-    border-radius:15px;
+    border-radius:16px;
     display:none;
 }
 
-/* sembunyikan tombol fullscreen */
+
 video::-webkit-media-controls-fullscreen-button{
     display:none !important;
 }
 
-.desc{
-    margin-top:15px;
+
+
+.description{
+
+    margin-top:25px;
+    background:#111827;
+    padding:20px;
+    border-radius:15px;
+    line-height:1.7;
     font-size:15px;
-    color:#ccc;
+    color:#ddd;
+
 }
+
+
+.description h2{
+    color:white;
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+
+.info{
+
+    margin-top:20px;
+    padding:15px;
+    border-radius:12px;
+    background:#0f172a;
+    color:#aaa;
+    font-size:14px;
+    line-height:1.6;
+
+}
+
+
+.footer{
+    text-align:center;
+    color:#777;
+    font-size:13px;
+    margin:25px 0;
+}
+
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-<h1>The Internet Be Wild</h1>
 
-<div class="video-box" id="thumbnailBox">
+<div class="title">
+The Internet Be Wild
+</div>
 
-    <img src="https://cdn.aceimg.com/RQm0wiwZe.jpg">
 
-    <div class="play-btn">
-        ▶
-    </div>
+<div class="video-box" id="thumb">
+
+<img src="https://cdn.aceimg.com/RQm0wiwZe.jpg">
+
+
+<div class="play">
+▶
+</div>
+
 
 </div>
 
 
-<video id="videoPlayer" controls playsinline preload="metadata">
-    <source src="https://cdn.slicedrive.com/U1aNyu4o1.mp4" type="video/mp4">
+
+<video id="player" controls playsinline>
+
+<source src="https://cdn.slicedrive.com/U1aNyu4o1.mp4" type="video/mp4">
+
 </video>
 
 
-<div class="desc">
-Watch the full video below
+
+<div class="description">
+
+<h2>Watch The Full Video</h2>
+
+<p>
+Welcome to The Internet Be Wild. Here you can discover interesting,
+entertaining, and trending videos from around the internet.
+</p>
+
+<br>
+
+<p>
+Our goal is to share unique moments, viral stories, and amazing
+content in one simple place. Enjoy the video experience with a clean
+and easy-to-use player designed for mobile users.
+</p>
+
+<br>
+
+<p>
+Make sure your connection is stable for the best viewing quality.
+The video player will automatically adjust to your device screen
+for a smoother experience.
+</p>
+
+<br>
+
+<p>
+Thank you for visiting our page. We regularly update our content
+with fresh videos and interesting stories from different topics.
+Stay tuned for more updates.
+</p>
+
+
+</div>
+
+
+
+<div class="info">
+
+<strong>About this page</strong>
+<br><br>
+
+This page is created to provide a better video browsing experience.
+All content is organized in a simple format so visitors can easily
+watch and enjoy videos using their mobile devices.
+
+</div>
+
+
+
+<div class="footer">
+
+© 2026 The Internet Be Wild
+
 </div>
 
 
 </div>
+
 
 
 <script>
 
-const thumbBox = document.getElementById("thumbnailBox");
-const video = document.getElementById("videoPlayer");
+const thumb=document.getElementById("thumb");
+const video=document.getElementById("player");
 
 
-thumbBox.onclick = function(){
+thumb.onclick=function(){
 
-    thumbBox.style.display="none";
+thumb.style.display="none";
 
-    video.style.display="block";
+video.style.display="block";
 
-    video.play();
+video.play();
 
 };
 
